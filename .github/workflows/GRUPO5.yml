@@ -29,6 +29,30 @@ jobs:
           echo "La rama es: $GITHUB_REF_NAME"
           echo "El workflow es: $GITHUB_WORKFLOW"
 
+      - name: "Generar archivo JSON"
+        run: |
+          echo '{' > resultado.json
+          echo '  "Prueba de mensajes": {' >> resultado.json
+          echo '    "mensaje": "Hola Grupo 5, bienvenidos"' >> resultado.json
+          echo '  },' >> resultado.json
+          echo '  "Variables creadas en el workflow": {' >> resultado.json
+          echo '    "plataforma": "${{ env.plataforma }}",' >> resultado.json
+          echo '    "region": "${{ env.region }}",' >> resultado.json
+          echo '    "clase": "${{ env.clase }}"' >> resultado.json
+          echo '  },' >> resultado.json
+          echo '  "Variables del entorno de GitHub Actions": {' >> resultado.json
+          echo '    "repositorio": "$GITHUB_REPOSITORY",' >> resultado.json
+          echo '    "rama": "$GITHUB_REF_NAME",' >> resultado.json
+          echo '    "workflow": "$GITHUB_WORKFLOW"' >> resultado.json
+          echo '  },' >> resultado.json
+          echo '  "Despedida": {' >> resultado.json
+          echo '    "mensaje": "El workflow del Grupo 5 se ejecutó correctamente."' >> resultado.json
+          echo '  }' >> resultado.json
+          echo '}' >> resultado.json
+
+      - name: "Mostrar archivo JSON"
+        run: cat resultado.json
+
       - name: "Con Despedida"
         if: env.plataforma == 'reniec'
         run: |
