@@ -16,3 +16,9 @@ jobs:
     steps:
       - name: "Prueba de mensajes"
         run: echo "Hola Grupo 5, bienvenidos"
+
+      - name: "Variables creadas en el workflow"
+        run: |
+          echo "La plataforma es: ${{ env.plataforma }}"
+          echo "La región es: ${{ env.region }}"
+          echo "La clase es: ${{ env.clase }}"
