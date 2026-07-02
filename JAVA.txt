@@ -1,0 +1,15 @@
+public class ConsultaDNI {
+
+    public static void main(String[] args) {
+
+        String dni = "74581236";
+        String ciudadano = "Juan Carlos Pérez Gómez";
+
+        System.out.println("Sistema RENIEC");
+        System.out.println("DNI: " + dni);
+        System.out.println("Ciudadano: " + ciudadano);
+        System.out.println("Consulta realizada correctamente.");
+    }
+}3
+
+
