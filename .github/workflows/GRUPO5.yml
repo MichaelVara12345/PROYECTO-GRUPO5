@@ -28,3 +28,12 @@ jobs:
           echo "El repositorio es: $GITHUB_REPOSITORY"
           echo "La rama es: $GITHUB_REF_NAME"
           echo "El workflow es: $GITHUB_WORKFLOW"
+
+      - name: "Con Despedida"
+        if: env.plataforma == 'reniec'
+        run: |
+         echo "Despedida: El workflow del Grupo 5 se ejecutó correctamente."
+      
+      - name: "Sin despedida"
+        if: env.plataforma == 'aws'
+        run: echo "Este mensaje NO se debe imprimir porque la condición es falsa."
