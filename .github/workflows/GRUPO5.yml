@@ -22,3 +22,9 @@ jobs:
           echo "La plataforma es: ${{ env.plataforma }}"
           echo "La región es: ${{ env.region }}"
           echo "La clase es: ${{ env.clase }}"
+
+      - name: "Variables del entorno del Github Actions"
+        run: |
+          echo "El repositorio es: $GITHUB_REPOSITORY"
+          echo "La rama es: $GITHUB_REF_NAME"
+          echo "El workflow es: $GITHUB_WORKFLOW"
